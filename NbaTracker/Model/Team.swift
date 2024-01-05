@@ -16,3 +16,7 @@ struct Team: Codable, Identifiable {
     var fullName: String
     var name: String
 }
+
+struct TeamsResponse: Codable {
+    let data: [Team]
+}

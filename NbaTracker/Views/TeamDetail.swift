@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TeamDetail: View {
     @Environment(ModelData.self) var modelData
-
     
+    // Can't load modelData.teams probably
     var body: some View {
         ScrollView {
-            ForEach(modelData.teams, id: \.self) { team in
+            ForEach(modelData.teams) { team in
                 HStack(spacing: 50){
-                    Text(team)
+                    Text(team.fullName)
                         .padding([.vertical], 5)
                     Spacer()
                     Image(systemName: "heart.fill")
@@ -24,6 +24,23 @@ struct TeamDetail: View {
             Spacer()
         }
         .padding()
+        .task {
+            do {
+                modelData.teams = try await getAllTeams()
+            }
+            catch BasicError.invalidUrl{
+                print("Invalid URL")
+            }
+            catch BasicError.invalidResponse {
+                print("Invalid Response")
+            }
+            catch BasicError.invalidData {
+                print("Invalid Data")
+            }
+            catch {
+                print("Unexpected error")
+            }
+        }
     }
 }
 

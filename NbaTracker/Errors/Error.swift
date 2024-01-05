@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum BasicError: Error {
+    case invalidUrl
+    case invalidResponse
+    case invalidData
+}
