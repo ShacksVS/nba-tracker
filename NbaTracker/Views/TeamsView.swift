@@ -12,32 +12,21 @@ struct TeamsView: View {
     @State private var isTeamDetailViewPresented = false
 
     var body: some View {
-        //        @Bindable var modelData = modelData
-
-        ScrollView {
-            ForEach(modelData.teams) { team in
-                HStack(spacing: 50){
-                    Text(team.fullName)
-                        .padding([.vertical], 12)
-                    
-                    
-                    // Fix navigation
-                    NavigationStack{
-                        NavigationLink {
-                            TeamDetailView(team: team)
-                        } label: {
-                            Spacer()
-                            Label("",systemImage: "arrow.right")
-                                .onTapGesture {
-                                    isTeamDetailViewPresented.toggle()
-                                }
-                        }.sheet(isPresented: $isTeamDetailViewPresented) {
-                            TeamDetailView(team: team)
-                        }
+        
+        NavigationSplitView {
+            ScrollView {
+                ForEach(modelData.teams) { team in
+                    NavigationLink {
+                        TeamDetailView(team: team)
+                    } label: {
+                        TeamRow(team: team)
+                            .foregroundColor(.black)
                     }
+                    
                 }
             }
-            Spacer()
+        } detail: {
+            Text("Team List")
         }
         .padding()
         .task {

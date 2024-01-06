@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904F62692B49969C00403CEA /* TeamRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62682B49969C00403CEA /* TeamRow.swift */; };
 		90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */; };
 		90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF002B484B7C0027944B /* TeamsView.swift */; };
 		90B8EF032B484B7D0027944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B8EF022B484B7D0027944B /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		904F62682B49969C00403CEA /* TeamRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRow.swift; sourceTree = "<group>"; };
 		90B8EEFB2B484B7C0027944B /* NbaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NbaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NbaTrackerApp.swift; sourceTree = "<group>"; };
 		90B8EF002B484B7C0027944B /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				90B8EF002B484B7C0027944B /* TeamsView.swift */,
 				90B8EF2C2B48515B0027944B /* ContentView.swift */,
 				A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */,
+				904F62682B49969C00403CEA /* TeamRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				90B8EF322B48A6BA0027944B /* ApiError.swift in Sources */,
 				90B8EF2B2B484C130027944B /* ModelData.swift in Sources */,
 				A5E3316E2B48CCAF00FAEC35 /* TeamDetailView.swift in Sources */,
+				904F62692B49969C00403CEA /* TeamRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
