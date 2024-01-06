@@ -11,7 +11,6 @@ import Foundation
 class ModelData{
     // var teams: [String] = ["Team A", "Team B", "Team C"]
     var teams: [Team] = []
-    
 }
 
 // Cant load probably because of the complexity of the dict

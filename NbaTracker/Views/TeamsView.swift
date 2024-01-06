@@ -10,8 +10,9 @@ import SwiftUI
 struct TeamsView: View {
     @Environment(ModelData.self) var modelData
     
-    // Can't load modelData.teams probably
     var body: some View {
+        //        @Bindable var modelData = modelData
+
         ScrollView {
             ForEach(modelData.teams) { team in
                 HStack(spacing: 50){
