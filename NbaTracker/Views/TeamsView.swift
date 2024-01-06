@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TeamsView: View {
     @Environment(ModelData.self) var modelData
-    
+    @State private var isTeamDetailViewPresented = false
+
     var body: some View {
         //        @Bindable var modelData = modelData
 
@@ -18,12 +19,21 @@ struct TeamsView: View {
                 HStack(spacing: 50){
                     Text(team.fullName)
                         .padding([.vertical], 12)
-                    Spacer()
                     
-                    NavigationLink {
-                        TeamDetailView(team: team)
-                    } label: {
-                        Label("",systemImage: "arrow.right")
+                    
+                    // Fix navigation
+                    NavigationStack{
+                        NavigationLink {
+                            TeamDetailView(team: team)
+                        } label: {
+                            Spacer()
+                            Label("",systemImage: "arrow.right")
+                                .onTapGesture {
+                                    isTeamDetailViewPresented.toggle()
+                                }
+                        }.sheet(isPresented: $isTeamDetailViewPresented) {
+                            TeamDetailView(team: team)
+                        }
                     }
                 }
             }

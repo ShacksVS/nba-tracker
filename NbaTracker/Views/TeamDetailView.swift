@@ -22,36 +22,34 @@ struct TeamDetailView: View {
                 .frame(width:140, height: 130)
             Spacer()
             
-            // ToDo align text of this VStack to the left or right
-            VStack {
-                Text("\'\(team.name)\' with ID: \(team.id)")
+            VStack(alignment: .leading){
+                Text(team.fullName)
                     .bold()
-                    .font(.title3)
                     .padding()
                 
-                Text(team.abbreviation)
+                Text("\(team.name), \(team.abbreviation)")
                     .padding([.horizontal],15)
                 
-                Text(team.city)
+                Text("From \(team.city)")
                     .padding()
             }
         }
         Divider()
         
         HStack {
-            Text(team.conference)
+            Text("Conference: \(team.conference)")
                 .padding()
             
             Spacer()
             
-            Text(team.division)
+            Text("Division: \(team.division)")
                 .padding()
         }
         Divider()
         
         Text("Team members info here")
 
-        // Spacer() // uncomment to move to the top
+        Spacer()
     }
 }
 
