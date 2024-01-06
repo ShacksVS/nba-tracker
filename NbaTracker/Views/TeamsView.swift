@@ -10,9 +10,9 @@ import SwiftUI
 struct TeamsView: View {
     @Environment(ModelData.self) var modelData
     @State private var isTeamDetailViewPresented = false
-
+    @State private var searchText: String = ""
+    
     var body: some View {
-        
         NavigationSplitView {
             ScrollView {
                 ForEach(modelData.teams) { team in
@@ -28,6 +28,7 @@ struct TeamsView: View {
         } detail: {
             Text("Team List")
         }
+        .searchable(text: $searchText)
         .padding()
         .task {
             do {
