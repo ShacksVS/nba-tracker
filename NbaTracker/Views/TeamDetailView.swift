@@ -13,24 +13,45 @@ struct TeamDetailView: View {
     
     var body: some View {
 //        @Bindable var modelData = modelData
-        Circle()
-            .foregroundColor(.secondary)
-        Text("\'\(team.name)\' with ID: \(team.id)")
-            .bold()
-            .font(.title3)
-            .padding()
         
-        Text(team.abbreviation)
-            .padding()
-        Text(team.city)
-            .padding()
-        Text(team.conference)
-            .padding()
-        Text(team.division)
-            .padding()
+        HStack(spacing: 30) {
+            Circle()
+                .foregroundColor(.secondary)
+                .shadow(radius: 20)
+                .padding([.leading], 25)
+                .frame(width:140, height: 130)
+            Spacer()
+            
+            // ToDo align text of this VStack to the left or right
+            VStack {
+                Text("\'\(team.name)\' with ID: \(team.id)")
+                    .bold()
+                    .font(.title3)
+                    .padding()
+                
+                Text(team.abbreviation)
+                    .padding([.horizontal],15)
+                
+                Text(team.city)
+                    .padding()
+            }
+        }
+        Divider()
+        
+        HStack {
+            Text(team.conference)
+                .padding()
+            
+            Spacer()
+            
+            Text(team.division)
+                .padding()
+        }
+        Divider()
+        
+        Text("Team members info here")
 
-        Spacer()
-        
+        // Spacer() // uncomment to move to the top
     }
 }
 

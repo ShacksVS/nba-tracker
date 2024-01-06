@@ -17,8 +17,9 @@ struct TeamsView: View {
             ForEach(modelData.teams) { team in
                 HStack(spacing: 50){
                     Text(team.fullName)
-                        .padding([.vertical], 5)
+                        .padding([.vertical], 12)
                     Spacer()
+                    
                     NavigationLink {
                         TeamDetailView(team: team)
                     } label: {
