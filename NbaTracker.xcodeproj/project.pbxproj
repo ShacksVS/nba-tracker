@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */; };
-		90B8EF012B484B7C0027944B /* TeamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF002B484B7C0027944B /* TeamDetail.swift */; };
+		90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF002B484B7C0027944B /* TeamsView.swift */; };
 		90B8EF032B484B7D0027944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B8EF022B484B7D0027944B /* Assets.xcassets */; };
 		90B8EF062B484B7D0027944B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B8EF052B484B7D0027944B /* Preview Assets.xcassets */; };
 		90B8EF102B484B7D0027944B /* NbaTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF0F2B484B7D0027944B /* NbaTrackerTests.swift */; };
@@ -17,7 +17,8 @@
 		90B8EF2B2B484C130027944B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF2A2B484C130027944B /* ModelData.swift */; };
 		90B8EF2D2B48515B0027944B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF2C2B48515B0027944B /* ContentView.swift */; };
 		90B8EF2F2B48A5CB0027944B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF2E2B48A5CB0027944B /* Team.swift */; };
-		90B8EF322B48A6BA0027944B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF312B48A6BA0027944B /* Error.swift */; };
+		90B8EF322B48A6BA0027944B /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF312B48A6BA0027944B /* ApiError.swift */; };
+		A5E3316E2B48CCAF00FAEC35 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		90B8EEFB2B484B7C0027944B /* NbaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NbaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NbaTrackerApp.swift; sourceTree = "<group>"; };
-		90B8EF002B484B7C0027944B /* TeamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetail.swift; sourceTree = "<group>"; };
+		90B8EF002B484B7C0027944B /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
 		90B8EF022B484B7D0027944B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90B8EF052B484B7D0027944B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90B8EF0B2B484B7D0027944B /* NbaTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NbaTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +52,8 @@
 		90B8EF2A2B484C130027944B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		90B8EF2C2B48515B0027944B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90B8EF2E2B48A5CB0027944B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		90B8EF312B48A6BA0027944B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		90B8EF312B48A6BA0027944B /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +151,9 @@
 		90B8EF292B484B930027944B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				90B8EF002B484B7C0027944B /* TeamDetail.swift */,
+				90B8EF002B484B7C0027944B /* TeamsView.swift */,
 				90B8EF2C2B48515B0027944B /* ContentView.swift */,
+				A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,7 +161,7 @@
 		90B8EF302B48A6AE0027944B /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				90B8EF312B48A6BA0027944B /* Error.swift */,
+				90B8EF312B48A6BA0027944B /* ApiError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -293,12 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B8EF012B484B7C0027944B /* TeamDetail.swift in Sources */,
+				90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */,
 				90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */,
 				90B8EF2D2B48515B0027944B /* ContentView.swift in Sources */,
 				90B8EF2F2B48A5CB0027944B /* Team.swift in Sources */,
-				90B8EF322B48A6BA0027944B /* Error.swift in Sources */,
+				90B8EF322B48A6BA0027944B /* ApiError.swift in Sources */,
 				90B8EF2B2B484C130027944B /* ModelData.swift in Sources */,
+				A5E3316E2B48CCAF00FAEC35 /* TeamDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NbaTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -490,6 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NbaTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

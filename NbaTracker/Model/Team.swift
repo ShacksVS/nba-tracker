@@ -8,13 +8,13 @@
 import Foundation
 
 struct Team: Codable, Identifiable {
-    var id: Int
-    var abbreviation: String
-    var city: String
-    var conference: String
-    var division: String
-    var fullName: String
-    var name: String
+    let id: Int
+    let abbreviation: String
+    let name: String
+    let fullName: String
+    let city: String
+    let conference: String
+    let division: String
 }
 
 struct TeamsResponse: Codable {

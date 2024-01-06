@@ -20,13 +20,13 @@ func getAllTeams() async throws -> [Team] {
     let endPoint = "https://www.balldontlie.io/api/v1/teams"
     
     guard let url = URL(string: endPoint) else {
-        throw BasicError.invalidUrl
+        throw ApiError.invalidUrl
     }
     
     let (data, response) = try await URLSession.shared.data(from: url)
     
     guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-        throw BasicError.invalidResponse
+        throw ApiError.invalidResponse
     }
     
     do {
@@ -35,6 +35,6 @@ func getAllTeams() async throws -> [Team] {
         let teamsResponse = try decoder.decode(TeamsResponse.self, from: data)
         return teamsResponse.data
     } catch {
-        throw BasicError.invalidData
+        throw ApiError.invalidData
     }
 }
