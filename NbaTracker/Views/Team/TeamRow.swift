@@ -17,7 +17,7 @@ struct TeamRowView: View {
                 
             Spacer()
             
-            Label("",systemImage: "arrow.right")
+            Image(systemName: "arrow.right")
                 .padding()
                 .foregroundColor(.blue)
             
