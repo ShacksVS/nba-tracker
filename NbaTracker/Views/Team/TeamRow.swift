@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct TeamRow: View {
+struct TeamRowView: View {
     var team: Team
 
     var body: some View {
         HStack(spacing: 50){
             Text(team.fullName)
-                .padding([.vertical,.horizontal], 12)
+                .padding()
                 
             Spacer()
             
             Label("",systemImage: "arrow.right")
+                .padding()
                 .foregroundColor(.blue)
             
         }
@@ -25,5 +26,5 @@ struct TeamRow: View {
 }
 
 #Preview {
-    TeamRow(team: Team.mock())
+    TeamRowView(team: Team.mock())
 }

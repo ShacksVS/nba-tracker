@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		904F62692B49969C00403CEA /* TeamRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62682B49969C00403CEA /* TeamRow.swift */; };
+		904F626E2B4A96B600403CEA /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F626D2B4A96B600403CEA /* PlayersView.swift */; };
+		904F62702B4A96C300403CEA /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F626F2B4A96C300403CEA /* PlayerRow.swift */; };
+		904F62722B4A96DC00403CEA /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62712B4A96DC00403CEA /* PlayerDetailView.swift */; };
+		904F62742B4A96E700403CEA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62732B4A96E700403CEA /* Player.swift */; };
 		90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */; };
 		90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF002B484B7C0027944B /* TeamsView.swift */; };
 		90B8EF032B484B7D0027944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B8EF022B484B7D0027944B /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		904F62682B49969C00403CEA /* TeamRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRow.swift; sourceTree = "<group>"; };
+		904F626D2B4A96B600403CEA /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		904F626F2B4A96C300403CEA /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
+		904F62712B4A96DC00403CEA /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		904F62732B4A96E700403CEA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		90B8EEFB2B484B7C0027944B /* NbaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NbaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NbaTrackerApp.swift; sourceTree = "<group>"; };
 		90B8EF002B484B7C0027944B /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
@@ -83,6 +91,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904F626A2B4A967400403CEA /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				90B8EF002B484B7C0027944B /* TeamsView.swift */,
+				A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */,
+				904F62682B49969C00403CEA /* TeamRow.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		904F626C2B4A96A300403CEA /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				904F626D2B4A96B600403CEA /* PlayersView.swift */,
+				904F626F2B4A96C300403CEA /* PlayerRow.swift */,
+				904F62712B4A96DC00403CEA /* PlayerDetailView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		90B8EEF22B484B7C0027944B = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +174,7 @@
 			children = (
 				90B8EF2A2B484C130027944B /* ModelData.swift */,
 				90B8EF2E2B48A5CB0027944B /* Team.swift */,
+				904F62732B4A96E700403CEA /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,10 +182,9 @@
 		90B8EF292B484B930027944B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				90B8EF002B484B7C0027944B /* TeamsView.swift */,
+				904F626C2B4A96A300403CEA /* Player */,
+				904F626A2B4A967400403CEA /* Team */,
 				90B8EF2C2B48515B0027944B /* ContentView.swift */,
-				A5E3316D2B48CCAF00FAEC35 /* TeamDetailView.swift */,
-				904F62682B49969C00403CEA /* TeamRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,9 +329,13 @@
 			files = (
 				90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */,
 				90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */,
+				904F626E2B4A96B600403CEA /* PlayersView.swift in Sources */,
+				904F62702B4A96C300403CEA /* PlayerRow.swift in Sources */,
+				904F62742B4A96E700403CEA /* Player.swift in Sources */,
 				90B8EF2D2B48515B0027944B /* ContentView.swift in Sources */,
 				90B8EF2F2B48A5CB0027944B /* Team.swift in Sources */,
 				90B8EF322B48A6BA0027944B /* ApiError.swift in Sources */,
+				904F62722B4A96DC00403CEA /* PlayerDetailView.swift in Sources */,
 				90B8EF2B2B484C130027944B /* ModelData.swift in Sources */,
 				A5E3316E2B48CCAF00FAEC35 /* TeamDetailView.swift in Sources */,
 				904F62692B49969C00403CEA /* TeamRow.swift in Sources */,

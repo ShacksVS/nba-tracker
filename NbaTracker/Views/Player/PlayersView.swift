@@ -1,38 +1,37 @@
 //
-//  TeamDetailView.swift
+//  PlayersView.swift
 //  NbaTracker
 //
-//  Created by Viktor Sovyak on 1/5/24.
+//  Created by Viktor Sovyak on 1/7/24.
 //
 
 import SwiftUI
 
-struct TeamsView: View {
+struct PlayersView: View {
     @Environment(ModelData.self) var modelData
-    @State private var isTeamDetailViewPresented = false
     @State private var searchText: String = ""
     
     var body: some View {
         NavigationSplitView {
             ScrollView {
-                ForEach(modelData.teams) { team in
+                ForEach(modelData.players) { player in
                     NavigationLink {
-                        TeamDetailView(team: team)
+                        PlayerDetailView(player: player)
                     } label: {
-                        TeamRow(team: team)
+                        PlayerRow(player: player)
                             .foregroundColor(.black)
                     }
                     
                 }
             }
         } detail: {
-            Text("Team List")
+            Text("Players List")
         }
         .searchable(text: $searchText)
         .padding()
         .task {
             do {
-                modelData.teams = try await getAllTeams()
+                modelData.players = try await getAllPlayers()
             } catch let error as ApiError {
                 switch(error){
                 case .invalidUrl:
@@ -49,9 +48,9 @@ struct TeamsView: View {
             }
         }
     }
+
 }
 
 #Preview {
-    TeamsView()
-        .environment(ModelData())
+    PlayersView().environment(ModelData())
 }

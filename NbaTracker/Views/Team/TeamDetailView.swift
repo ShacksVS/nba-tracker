@@ -20,6 +20,7 @@ struct TeamDetailView: View {
                 .shadow(radius: 20)
                 .padding([.leading], 25)
                 .frame(width:140, height: 130)
+            
             Spacer()
             
             VStack(alignment: .leading){
