@@ -31,7 +31,7 @@ struct TeamsView: View {
                                 TeamDetailView(team: team)
                             } label: {
                                 TeamRowView(team: team)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("TextColor"))
                             }
                         }
                     }
