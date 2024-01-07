@@ -11,25 +11,37 @@ struct TeamsView: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
     
+    var filteredTeams: [Team] {
+        guard !searchText.isEmpty else { return modelData.teams }
+        return modelData.teams.filter { $0.fullName.lowercased().contains(searchText.lowercased()) }
+    }
+    
     var body: some View {
-        @Bindable var modelData = modelData
-        
         NavigationSplitView {
-            ScrollView {
-                ForEach(modelData.teams) { team in
-                    NavigationLink {
-                        TeamDetailView(team: team)
-                    } label: {
-                        TeamRowView(team: team)
-                            .foregroundColor(.black)
+            if modelData.teams.isEmpty {
+                ContentUnavailableView("No Teams", systemImage: "person.2.slash",
+                                       description: Text("You need to have teams here"))
+            } else {
+                if filteredTeams.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
+                } else {
+                    ScrollView {
+                        ForEach(filteredTeams) { team in
+                            NavigationLink {
+                                TeamDetailView(team: team)
+                            } label: {
+                                TeamRowView(team: team)
+                                    .foregroundColor(.black)
+                            }
+                        }
                     }
-                    
                 }
             }
+                
         } detail: {
             Text("Team List")
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: "Search teams")
         .padding()
         .task {
             do {
