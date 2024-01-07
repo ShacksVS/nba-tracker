@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PlayersView: View {
     @Environment(ModelData.self) var modelData
-    @State private var searchText: String = ""
     
     var body: some View {
         NavigationSplitView {
@@ -27,7 +26,6 @@ struct PlayersView: View {
         } detail: {
             Text("Players List")
         }
-        .searchable(text: $searchText)
         .padding()
         .task {
             do {

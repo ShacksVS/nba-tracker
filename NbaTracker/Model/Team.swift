@@ -16,7 +16,7 @@ struct Team: Codable, Identifiable {
     var conference: String
     var division: String
     
-    static func mock(id: Int = 1, abbreviation: String = "Abbreviation", name: String = "Name", fullName: String = "Full Name", city: String = "City", conference: String = "Conference", division: String = "Division") -> Team {
+    static func mock(id: Int = 1, abbreviation: String = "Team Abbreviation", name: String = "Team Name", fullName: String = "Team Full Name", city: String = "Team City", conference: String = "Team Conference", division: String = "Team Division") -> Team {
         return Team(id: id, abbreviation: abbreviation, name: name, fullName: fullName, city: city, conference: conference, division: division)
     }
 }

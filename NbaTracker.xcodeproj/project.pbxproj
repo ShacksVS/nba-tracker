@@ -12,6 +12,7 @@
 		904F62702B4A96C300403CEA /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F626F2B4A96C300403CEA /* PlayerRow.swift */; };
 		904F62722B4A96DC00403CEA /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62712B4A96DC00403CEA /* PlayerDetailView.swift */; };
 		904F62742B4A96E700403CEA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62732B4A96E700403CEA /* Player.swift */; };
+		904F62762B4AA05200403CEA /* PlayerTeamNavigationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F62752B4AA05200403CEA /* PlayerTeamNavigationRow.swift */; };
 		90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */; };
 		90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8EF002B484B7C0027944B /* TeamsView.swift */; };
 		90B8EF032B484B7D0027944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B8EF022B484B7D0027944B /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		904F626F2B4A96C300403CEA /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		904F62712B4A96DC00403CEA /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		904F62732B4A96E700403CEA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		904F62752B4AA05200403CEA /* PlayerTeamNavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamNavigationRow.swift; sourceTree = "<group>"; };
 		90B8EEFB2B484B7C0027944B /* NbaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NbaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B8EEFE2B484B7C0027944B /* NbaTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NbaTrackerApp.swift; sourceTree = "<group>"; };
 		90B8EF002B484B7C0027944B /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				904F626D2B4A96B600403CEA /* PlayersView.swift */,
 				904F626F2B4A96C300403CEA /* PlayerRow.swift */,
 				904F62712B4A96DC00403CEA /* PlayerDetailView.swift */,
+				904F62752B4AA05200403CEA /* PlayerTeamNavigationRow.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				90B8EF012B484B7C0027944B /* TeamsView.swift in Sources */,
 				90B8EEFF2B484B7C0027944B /* NbaTrackerApp.swift in Sources */,
+				904F62762B4AA05200403CEA /* PlayerTeamNavigationRow.swift in Sources */,
 				904F626E2B4A96B600403CEA /* PlayersView.swift in Sources */,
 				904F62702B4A96C300403CEA /* PlayerRow.swift in Sources */,
 				904F62742B4A96E700403CEA /* Player.swift in Sources */,

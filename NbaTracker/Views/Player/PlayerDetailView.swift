@@ -12,10 +12,19 @@ struct PlayerDetailView: View {
     var player: Player
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack(alignment: .leading){
+                Text("\(player.lastName) \(player.firstName)")
+                
+                PlayerTeamNavigationRow(player: player)
+                
+                Text("Position: \(player.position)")
+            }
+        }
     }
 }
 
 #Preview {
     PlayerDetailView(player: Player.mock())
+        .environment(ModelData())
 }
