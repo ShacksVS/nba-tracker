@@ -18,7 +18,7 @@ struct PlayerRow: View {
             
             Spacer()
             
-            Label("", systemImage: "arrow.right")
+            Image(systemName: "arrow.right")
                 .padding()
         }
     }

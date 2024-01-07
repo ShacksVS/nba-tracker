@@ -55,6 +55,6 @@ struct TeamDetailView: View {
 }
 
 #Preview {
-    return TeamDetailView(team: Team.mock())
+    TeamDetailView(team: Team.mock())
         .environment(ModelData())
 }
