@@ -17,7 +17,7 @@ struct TeamsView: View {
     }
     
     var body: some View {
-        NavigationSplitView {
+        NavigationView {
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
                                        description: Text("You need to have teams here"))
@@ -38,8 +38,6 @@ struct TeamsView: View {
                 }
             }
                 
-        } detail: {
-            Text("Team List")
         }
         .searchable(text: $searchText, prompt: "Search teams")
         .padding()
