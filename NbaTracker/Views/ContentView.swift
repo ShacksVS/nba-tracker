@@ -18,17 +18,18 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection) {
             TeamsView()
-                .tabItem {                     
+                .tabItem {
                     Label("Teams", systemImage: "person.3.fill")
                 }
+            
             PlayersView()
                 .tabItem {
                     Label("Players", systemImage: "basketball.fill")
                 }
         }
-    }
+        }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environment(ModelData())
 }

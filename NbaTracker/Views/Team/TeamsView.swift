@@ -17,7 +17,7 @@ struct TeamsView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
                                        description: Text("You need to have teams here"))

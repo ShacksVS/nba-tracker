@@ -17,7 +17,7 @@ struct PlayersView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             if modelData.players.isEmpty {
                 ContentUnavailableView("No Players", systemImage: "person.2.slash",
                                        description: Text("You need to have players here"))
