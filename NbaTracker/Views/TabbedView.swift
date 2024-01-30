@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TabbedView: View {
-    @Environment(ModelData.self) var modelData
     @State private var selection: Tab = .teams
     
     enum Tab {
@@ -29,25 +28,6 @@ struct TabbedView: View {
                 .tabItem {
                     Label("Players", systemImage: "basketball.fill")
                 }
-        }
-        .task {
-            do {
-                modelData.players = try await getAllPlayers()
-                modelData.teams = try await getAllTeams()
-            } catch let error as ApiError {
-                switch(error){
-                case .invalidUrl:
-                    print("Invalid URL")
-                    
-                case .invalidResponse:
-                    print("Invalid response")
-                    
-                case .invalidData:
-                    print("Invalid data")
-                }
-            } catch {
-                print("Unexpected error: \(error)")
-            }
         }
     }
 }
