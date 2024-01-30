@@ -122,9 +122,16 @@
 			isa = PBXGroup;
 			children = (
 				90545F6D2B6957B2009BC90F /* BackButton.swift */,
-				90545F6F2B695FFA009BC90F /* SearchBar.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		90545F722B6961C2009BC90F /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				90545F6F2B695FFA009BC90F /* SearchBar.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		90B8EEF22B484B7C0027944B = {
@@ -198,6 +205,7 @@
 		90B8EF292B484B930027944B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90545F722B6961C2009BC90F /* SearchBar */,
 				90545F6C2B695593009BC90F /* Button */,
 				904F626C2B4A96A300403CEA /* Player */,
 				904F626A2B4A967400403CEA /* Team */,

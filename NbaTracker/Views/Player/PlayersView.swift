@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayersView: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
-
+    
     var filteredPlayers: [Player] {
         guard !searchText.isEmpty else { return modelData.players }
         return modelData.players.filter { $0.firstName.lowercased().contains(searchText.lowercased()) || $0.lastName.lowercased().contains(searchText.lowercased()) }
@@ -19,7 +19,8 @@ struct PlayersView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                SearchBar(searchText: $searchText)
+                SearchBar(searchText: $searchText, searchObject: "Players")
+                    .padding([.bottom])
 
                 if modelData.players.isEmpty {
                     ContentUnavailableView("No Players", systemImage: "person.2.slash",
@@ -36,6 +37,7 @@ struct PlayersView: View {
                                     PlayerRow(player: player)
                                         .foregroundColor(Color("TextColor"))
                                 }
+                                Divider()
                             }
                         }
                     }

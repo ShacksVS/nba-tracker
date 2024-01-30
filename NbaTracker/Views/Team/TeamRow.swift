@@ -20,7 +20,6 @@ struct TeamRowView: View {
             Image(systemName: "arrow.right")
                 .padding()
                 .foregroundColor(.blue)
-            
         }
     }
 }

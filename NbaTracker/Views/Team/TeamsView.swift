@@ -19,7 +19,8 @@ struct TeamsView: View {
     
     var body: some View {
         NavigationStack {
-            SearchBar(searchText: $searchText)
+            SearchBar(searchText: $searchText, searchObject: "Teams")
+                .padding(.bottom)
 
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
@@ -36,8 +37,8 @@ struct TeamsView: View {
                                 TeamRowView(team: team)
                                     .foregroundColor(Color("TextColor"))
                             }
-                        }
-                    }
+                            Divider()
+                    }                    }
                 }
             }
                 

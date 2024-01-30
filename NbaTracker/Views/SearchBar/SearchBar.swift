@@ -9,9 +9,10 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var searchText: String
-
+    var searchObject: String
+    
     var body: some View {
-        TextField("Search players", text: $searchText)
+        TextField("Search \(searchObject)", text: $searchText)
             .padding(7)
             .padding(.horizontal, 25)
             .background(Color(.systemGray6))
