@@ -20,7 +20,7 @@ struct PlayersView: View {
         NavigationStack {
             VStack {
                 SearchBar(searchText: $searchText, searchObject: "Players")
-                    .padding([.bottom])
+                    .padding([.vertical])
 
                 if modelData.players.isEmpty {
                     ContentUnavailableView("No Players", systemImage: "person.2.slash",

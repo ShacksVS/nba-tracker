@@ -20,7 +20,7 @@ struct TeamsView: View {
     var body: some View {
         NavigationStack {
             SearchBar(searchText: $searchText, searchObject: "Teams")
-                .padding(.bottom)
+                .padding(.vertical)
 
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
