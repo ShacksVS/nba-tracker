@@ -8,26 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .teams
-    
-    enum Tab {
-        case teams
-        case players
-    }
-    
+    @Environment(ModelData.self) var modelData
+
     var body: some View {
-        TabView(selection: $selection) {
-            TeamsView()
-                .tabItem {
-                    Label("Teams", systemImage: "person.3.fill")
-                }
-            
-            PlayersView()
-                .tabItem {
-                    Label("Players", systemImage: "basketball.fill")
-                }
+        NavigationStack{
+            NavigationLink{
+                TabbedView()
+            } label: {
+                Text("Enter")
+            }
+            .navigationBarHidden(true)
         }
-        }
+    }
 }
 
 #Preview {

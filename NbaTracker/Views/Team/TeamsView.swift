@@ -11,7 +11,7 @@ struct TeamsView: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
     @FocusState private var isSearchBarFocused: Bool
-
+    
     var filteredTeams: [Team] {
         guard !searchText.isEmpty else { return modelData.teams }
         return modelData.teams.filter { $0.fullName.lowercased().contains(searchText.lowercased()) }
@@ -19,13 +19,14 @@ struct TeamsView: View {
     
     var body: some View {
         NavigationStack {
-            SearchBar(searchText: $searchText, searchObject: "Teams")
-                .padding(.vertical)
-
+            
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
                                        description: Text("You need to have teams here"))
             } else {
+                SearchBar(searchText: $searchText, searchObject: "Teams")
+                    .padding(.vertical)
+                
                 if filteredTeams.isEmpty {
                     ContentUnavailableView.search(text: searchText)
                 } else {
@@ -44,24 +45,6 @@ struct TeamsView: View {
                 
         }
         .padding()
-        .task {
-            do {
-                modelData.teams = try await getAllTeams()
-            } catch let error as ApiError {
-                switch(error){
-                case .invalidUrl:
-                    print("Invalid URL")
-                    
-                case .invalidResponse:
-                    print("Invalid response")
-                    
-                case .invalidData:
-                    print("Invalid data")
-                }
-            } catch {
-                print("Unexpected error: \(error)")
-            }
-        }
     }
 }
 
