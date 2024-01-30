@@ -10,7 +10,8 @@ import SwiftUI
 struct TeamsView: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
-    
+    @FocusState private var isSearchBarFocused: Bool
+
     var filteredTeams: [Team] {
         guard !searchText.isEmpty else { return modelData.teams }
         return modelData.teams.filter { $0.fullName.lowercased().contains(searchText.lowercased()) }
@@ -18,6 +19,8 @@ struct TeamsView: View {
     
     var body: some View {
         NavigationStack {
+            SearchBar(searchText: $searchText)
+
             if modelData.teams.isEmpty {
                 ContentUnavailableView("No Teams", systemImage: "person.2.slash",
                                        description: Text("You need to have teams here"))
@@ -39,7 +42,6 @@ struct TeamsView: View {
             }
                 
         }
-        .searchable(text: $searchText, prompt: "Search teams")
         .padding()
         .task {
             do {

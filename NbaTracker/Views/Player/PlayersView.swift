@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayersView: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
-    
+
     var filteredPlayers: [Player] {
         guard !searchText.isEmpty else { return modelData.players }
         return modelData.players.filter { $0.firstName.lowercased().contains(searchText.lowercased()) || $0.lastName.lowercased().contains(searchText.lowercased()) }
@@ -18,27 +18,30 @@ struct PlayersView: View {
     
     var body: some View {
         NavigationStack {
-            if modelData.players.isEmpty {
-                ContentUnavailableView("No Players", systemImage: "person.2.slash",
-                                       description: Text("You need to have players here"))
-            } else {
-                if filteredPlayers.isEmpty {
-                    ContentUnavailableView.search(text: searchText)
+            VStack {
+                SearchBar(searchText: $searchText)
+
+                if modelData.players.isEmpty {
+                    ContentUnavailableView("No Players", systemImage: "person.2.slash",
+                                           description: Text("You need to have players here"))
                 } else {
-                    ScrollView {
-                        ForEach(filteredPlayers) { player in
-                            NavigationLink {
-                                PlayerDetailView(player: player)
-                            } label: {
-                                PlayerRow(player: player)
-                                    .foregroundColor(Color("TextColor"))
+                    if filteredPlayers.isEmpty {
+                        ContentUnavailableView.search(text: searchText)
+                    } else {
+                        ScrollView {
+                            ForEach(filteredPlayers) { player in
+                                NavigationLink {
+                                    PlayerDetailView(player: player)
+                                } label: {
+                                    PlayerRow(player: player)
+                                        .foregroundColor(Color("TextColor"))
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    .searchable(text: $searchText, prompt: "Search players")
     .padding()
     .task {
         do {

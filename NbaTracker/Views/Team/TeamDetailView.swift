@@ -14,12 +14,16 @@ struct TeamDetailView: View {
     var body: some View {
 //        @Bindable var modelData = modelData
         
+        HStack{
+            BackButton()
+            Spacer()
+        }
         HStack(spacing: 30) {
             Circle()
                 .foregroundColor(.secondary)
-                .shadow(radius: 20)
+                .shadow(radius: 10)
                 .padding([.leading], 25)
-                .frame(width:140, height: 130)
+                .frame(width:140, height: 140)
             
             Spacer()
             
@@ -52,6 +56,7 @@ struct TeamDetailView: View {
 
         Spacer()
     }
+    
 }
 
 #Preview {

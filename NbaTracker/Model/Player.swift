@@ -14,9 +14,10 @@ struct Player: Codable, Identifiable {
     let position: String
     let team: Team
     
-    static func mock(id:Int = 1, firstName: String = "Viktor", lastName: String = "Sovyak", position: String = "G", team: Team = Team.mock()) -> Player {
+    static func mock(id: Int = 1, firstName: String = "Viktor", lastName: String = "Sovyak", position: String = "G", team: Team = Team.mock()) -> Player {
         return Player(id: id, firstName: firstName, lastName: lastName, position: position, team: team)
     }
+    
 }
 
 struct PlayerResponse: Codable {

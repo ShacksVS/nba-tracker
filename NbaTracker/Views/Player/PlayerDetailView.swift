@@ -12,14 +12,23 @@ struct PlayerDetailView: View {
     var player: Player
     
     var body: some View {
-        NavigationStack{
-            VStack(alignment: .leading){
+        NavigationStack {
+            HStack {
+                BackButton()
+                Spacer()
+            }
+
+            VStack(alignment: .leading) {
+                Spacer()
                 Text("\(player.lastName) \(player.firstName)")
                 
                 PlayerTeamNavigationRow(player: player)
                 
                 Text("Position: \(player.position)")
+            
+                Spacer()
             }
+            Spacer()
         }
     }
 }
